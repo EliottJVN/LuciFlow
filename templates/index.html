@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon App Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Bienvenue sur Lucie the Writer</h1>
+
+    <!-- Animation de chargement -->
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Chargement en cours...</p>
+    </div>
+
+    <!-- Formulaire de chargement de fichier -->
+    <form action="/upload" method="post" enctype="multipart/form-data" onsubmit="showLoading()">
+        <label for="file">Sélectionnez un fichier audio :</label>
+        <input type="file" id="file" name="file" accept=".wav, .mp3, .ogg" required>
+        <button type="submit">Convertir en texte</button>
+    </form>
+
+    {% if output_data %}
+        <div class="output">
+            <h2>Résultat :</h2>
+            <p>{{ output_data }}</p>
+        </div>
+    {% endif %}
+
+    <script>
+        // Fonction pour afficher l'animation de chargement
+        function showLoading() {
+            document.getElementById("loading").style.display = "flex";
+        }
+    </script>
+</body>
+</html>
