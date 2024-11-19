@@ -83,18 +83,18 @@ LuciFlow
 ## **Fonctionnalités de l'application**
 
 1. **Page d'accueil :**
-   ✅ **Permet d'uploader un fichier audio** via le gestionaire de fichier.
-   ✅ **Bouton de conversion** pour démarrer la transcription.
+   - ✅ **Permet d'uploader un fichier audio** via le gestionaire de fichier.
+   - ✅ **Bouton de conversion** pour démarrer la transcription.
 
 2. **Traitement audio :**
-   ✅ Une fois le fichier uploadé, il est sauvegardé dans le dossier `uploads/`.
-   ✅ Le modèle **Whisper** effectue la transcription et renvoie le texte. Ce dernier est excuté en local téléchargé lors de la première utilisation.
+   - ✅ Une fois le fichier uploadé, il est sauvegardé dans le dossier `uploads/`.
+   - ✅ Le modèle **Whisper** effectue la transcription et renvoie le texte. Ce dernier est excuté en local téléchargé lors de la première utilisation.
    *Note: La rapidité de la transcription dépend de la puissance de votre machine.*
 
 3. **Résultat :**
-   ✅ La transcription s'affiche sur la même page.
-   ✅ Possibilité de copier le texte généré.
-   ✅ Boutons de téléchargement pour sauvegarder le texte sous forme de fichier doc ou txt
+   - ✅ La transcription s'affiche sur la même page.
+   - ✅ Possibilité de copier le texte généré.
+   - ✅ Boutons de téléchargement pour sauvegarder le texte sous forme de fichier doc ou txt
 
 ---
 
