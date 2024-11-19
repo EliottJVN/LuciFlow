@@ -2,7 +2,7 @@
 
 **LuciFlow** est une application Web basée sur Flask, conçue pour convertir des fichiers audio (mp3, wav, etc.) en texte à l'aide du modèle d'intelligence artificielle **openai/whisper-large-v3-turbo** disponible sur Hugging Face.
 
-L'application et le modèle d'IA sont destinés à être exécutée en local, ce qui permet de rester mettre de ces données. Cependant ceci nécisste, d'avoir une machine avec une puissance de calcul suffisante et ou du temps. ;)
+L'application et le modèle d'IA sont destinés à être exécutée en local, ce qui permet de rester maître de ces données. Cependant ceci nécessite, d'avoir une machine avec une puissance de calcul suffisante et ou du temps. ;)
 
 ---
 
@@ -102,11 +102,11 @@ LuciFlow
 
 ➡️ **Support multi-langues** : Adapter le modèle pour détecter automatiquement la langue ou permettre une sélection manuelle.
 
-➡️**Interface améliorée** : Ajouter plus de style et de fonctionnalités (exemple : barre de progression pour le téléchargement/transcription).
+➡️ **Interface améliorée** : Ajouter plus de style et de fonctionnalités (exemple : barre de progression pour le téléchargement/transcription).
 
 ➡️ **Hébergement distant** : Ajouter des options pour un déploiement sur des services cloud comme AWS, GCP ou Heroku.
 
-➡️**Historique des transcriptions** : Enregistrer les transcriptions pour un accès ultérieur.
+➡️ **Historique des transcriptions** : Enregistrer les transcriptions pour un accès ultérieur.
 
 ➡️ **Sécurité** : Ajouter des validations pour les fichiers uploadés et limiter les tailles de fichiers.
 
