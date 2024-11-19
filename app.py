@@ -1,6 +1,9 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, send_file
 from werkzeug.utils import secure_filename
+
+from io import BytesIO
+from docx import Document
 
 # Import de la fonction main depuis transcriptor.py
 from model import *
@@ -42,6 +45,35 @@ def upload_file():
         return render_template("index.html", output_data=output_data)
 
     return redirect(request.url)
+
+@app.route("/save_txt", methods=["POST"])
+def save_txt_file():
+    output_data = request.form['output_data']
+    
+    # Créer un fichier texte
+    txt_io = BytesIO()
+    txt_io.write(output_data.encode('utf-8'))  # Écrire les données dans le fichier texte
+    txt_io.seek(0)
+
+    # Envoyer le fichier en réponse
+    return send_file(txt_io, as_attachment=True, download_name="prediction.txt", mimetype="text/plain")
+
+@app.route("/save", methods=["POST"])
+def save_file():
+    output_data = request.form['output_data']
+    
+    # Créer un document Word
+    doc = Document()
+    doc.add_heading('Prédiction', level=1)
+    doc.add_paragraph(output_data)
+
+    # Sauvegarder le document dans un objet BytesIO
+    doc_io = BytesIO()
+    doc.save(doc_io)
+    doc_io.seek(0)
+
+    # Envoyer le fichier en réponse
+    return send_file(doc_io, as_attachment=True, download_name="prediction.doc", mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
 
 if __name__ == "__main__":
     app.run(debug=True)

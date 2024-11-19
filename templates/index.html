@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon App Flask</title>
+    <title>LuciFlow</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -23,12 +23,24 @@
     </form>
 
     {% if output_data %}
-        <div class="output">
-            <h2>Résultat :</h2>
-            <p>{{ output_data }}</p>
+    <div class="output">
+        <h2>Résultat :</h2>
+        <div class="output-form">
+            <form action="/save" method="post" class="form-inline">
+                <input type="hidden" name="output_data" value="{{ output_data }}">
+                <button type="submit">Sauvegarder en .doc</button>
+            </form>
+            <form action="/save_txt" method="post" class="form-inline">
+                <input type="hidden" name="output_data" value="{{ output_data }}">
+                <button type="submit">Sauvegarder en .txt</button>
+            </form>
         </div>
+        <p>{{ output_data }}</p>
+    </div>
     {% endif %}
 
+    <img src="{{ url_for('static', filename='background.svg') }}" alt="LuciFlow Logo" class="logo">
+    
     <script>
         // Fonction pour afficher l'animation de chargement
         function showLoading() {

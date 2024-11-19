@@ -36,6 +36,7 @@ form {
     text-align: center;
 }
 
+
 label {
     font-weight: bold;
     display: block;
@@ -68,26 +69,97 @@ button:hover {
     background-color: #218838;
 }
 
+
+/* Styles pour le logo */
+.logo {
+    display: block; /* Pour s'assurer qu'il est bien sur une nouvelle ligne */
+    margin-top: 0px; /* Espacement au-dessus du logo */
+    max-width: 400px; /* Limite la largeur du logo */
+    margin-left: auto;
+    margin-right: auto; /* Centre le logo horizontalement */
+    width: 100%; /* Permet à l'image de prendre toute la largeur disponible dans son conteneur */
+}
+
 /* Message de résultat */
+
+.output h2{
+    margin-bottom: 0px;
+}
+
 .output {
     background-color: #e9ecef;
     border: 1px solid #ccc;
     padding: 15px;
     border-radius: 8px;
-    max-width: 400px;
+    max-width: 1000px;
     width: 100%;
     margin-top: 20px;
     font-size: 1.1em;
     color: #333;
 }
 
+/* Boutons pour enregistrer */
+
+.form-inline{
+    background-color: transparent;
+    border: None;
+    margin: 0;
+    padding: 0;
+    box-shadow: None;
+}
+
+/* .output n'a plus besoin de display: flex */
+.output {
+    background-color: #e9ecef;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 1000px;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #333;
+    /* Retirer display: flex ici pour éviter l'impact */
+}
+
+/* .output-form gère bien les boutons en flex */
+.output-form {
+    background-color: transparent; 
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: nowrap;  /* Empêche le passage à la ligne */
+}
+
+.output-form button {
+    background-color: #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    min-width: 120px; /* Largeur minimale */
+}
+
+.output-form button:hover {
+    background-color: #0056b3; /* Couleur de fond des boutons au survol */
+}
+
 /* Responsive */
 @media (max-width: 500px) {
-    form, .output {
-        padding: 15px;
+    .output-form {
+        flex-direction: column; /* Aligner les boutons verticalement sur petits écrans */
+        gap: 10px; /* Espacement réduit entre les boutons */
     }
 
-    button {
+    .output-form button {
+        width: 100%;  /* Les boutons prennent toute la largeur disponible */
         padding: 8px 16px;
     }
 }
