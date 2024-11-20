@@ -76,4 +76,4 @@ def save_file():
     return send_file(doc_io, as_attachment=True, download_name="prediction.doc", mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
