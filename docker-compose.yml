@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    container_name: luciflow
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/LuciFlow
+    environment:
+      - FLASK_ENV=development
+    restart: unless-stopped
+
